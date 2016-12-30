@@ -160,7 +160,7 @@ msg_tmo_insert(struct msg *msg, struct conn *conn)
     timeout = server_timeout(conn);
 	
 #ifndef GRACEFUL
-	int slow = server_slow_duration(conn)
+    int slow = server_slow_duration(conn);
     if (timeout <= 0 && slow > 0) {
 		timeout = slow;
 		node = &msg->tmo_rbe;
